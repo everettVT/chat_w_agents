@@ -1,5 +1,5 @@
 import { ThemeToggle } from "@/app/components/layout/theme-toggle";
-import { Github, Settings } from "lucide-react";
+import { Github, Settings, Home, Search } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useNavigate } from "react-router-dom";
 import { GITHUB_URL, Path } from "../../constant";
@@ -18,15 +18,17 @@ export function SideBar(props: { className?: string }) {
 
   return (
     <div className="h-full relative group border-r w-full md:w-[300px]">
-      <div className="w-full h-full p-5 flex flex-col gap-5">
+      <div className="w-full h-full p-2 flex flex-col gap-5">
         <div className="flex flex-col flex-1">
           <div className="mb-5 flex justify-between gap-5 items-start">
-            <div>
-              <Typography.H1>{Locale.Welcome.Title}</Typography.H1>
-              <div className="text-sm text-muted-foreground">
-                {Locale.Welcome.SubTitle}
-              </div>
-            </div>
+            <Button className="w-full">
+              <Home className="mr-2 h-4 w-4" />
+              Home
+            </Button>
+            <Button className="w-full">
+              <Search className="mr-2 h-4 w-4" />
+              Search
+            </Button>
             <ThemeToggle />
           </div>
           <BotList />

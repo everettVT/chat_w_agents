@@ -59,7 +59,7 @@ export default function BotList() {
           onInput={(e) => setSearchText(e.currentTarget.value)}
         />
       </div>
-      <ScrollArea className="h-[60vh] pr-0 md:pr-3">
+      <ScrollArea className="h-[60vh] pr-0">
         {botList.map((b) => (
           <BotItem key={b.id} bot={b} />
         ))}
